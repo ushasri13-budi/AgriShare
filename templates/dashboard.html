@@ -1,0 +1,135 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Available Equipment | AgriShare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Navigation Bar -->
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🌾 AgriShare
+        </div>
+
+        <div class="dashboard-links">
+            <a href="/dashboard">Equipment</a>
+            <a href="/bookings">Rental Bookings</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Welcome Section -->
+    <section class="dashboard-hero">
+
+        <div>
+            <h1>Available Equipment 🚜</h1>
+
+            <p>
+                Browse agricultural equipment available
+                for rent and choose what you need.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Equipment Section -->
+    <section class="equipment-section">
+
+        <div class="section-heading">
+
+            <h2>Available Agricultural Equipment 🚜</h2>
+
+            <p>
+                Find equipment available for rent.
+            </p>
+
+        </div>
+
+
+        <div class="equipment-grid">
+
+            {% for item in equipment %}
+
+            <div class="equipment-card">
+
+                <div class="equipment-icon">
+                    🚜
+                </div>
+
+                <h3>{{ item[1] }}</h3>
+
+                <p>
+                    <strong>Category:</strong>
+                    {{ item[2] }}
+                </p>
+
+                <p>
+                    <strong>Description:</strong>
+                    {{ item[3] }}
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    📍 {{ item[5] }}
+                </p>
+
+                <div class="equipment-price">
+                    ₹{{ item[4] }} <span>/ hour</span>
+                </div>
+
+                <a href="/rent/{{ item[0] }}" class="rent-btn">
+                    Rent Now 🚜
+                </a>
+
+            </div>
+
+            {% else %}
+
+            <div class="no-equipment">
+
+                <h3>No equipment available</h3>
+
+                <p>
+                    There is currently no agricultural equipment
+                    available for rent.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+
+        <h3>🌾 AgriShare</h3>
+
+        <p>
+            Connecting farmers with agricultural equipment.
+        </p>
+
+        <p class="copyright">
+            © 2026 AgriShare. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

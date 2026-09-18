@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Equipment Owner Dashboard | AgriShare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">🌾 AgriShare</div>
+
+    <div class="buttons">
+        <a href="/" class="login">Home</a>
+        <a href="/logout" class="register">Logout</a>
+    </div>
+
+</nav>
+
+<section class="categories">
+
+    <h2>🚜 Equipment Owner Dashboard</h2>
+
+    <p>
+        Welcome! List your agricultural equipment and manage rentals.
+    </p>
+
+    <br>
+
+    <div class="category-container">
+
+        <div class="card">
+
+            <div class="icon">➕</div>
+
+            <h3>Add Equipment</h3>
+
+            <p>
+                List your agricultural equipment
+                and make it available for rental.
+            </p>
+
+            <a href="/add_equipment" class="btn">
+                Add Equipment
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">🚜</div>
+
+            <h3>My Equipment</h3>
+
+            <p>
+                View the equipment available
+                through AgriShare.
+            </p>
+
+            <a href="/dashboard" class="btn">
+                View Equipment
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+    <div class="icon">📋</div>
+
+    <h3>Rental Requests</h3>
+
+    <p>
+        Review rental requests from farmers
+        and accept or reject them.
+    </p>
+
+    <a href="/owner_requests" class="btn">
+        View Requests
+    </a>
+
+</div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

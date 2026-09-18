@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Equipment Details | AgriShare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🌾 AgriShare
+        </div>
+
+        <div class="dashboard-links">
+            <a href="/">Home</a>
+            <a href="/dashboard">Equipment</a>
+            <a href="/login">Login</a>
+        </div>
+
+    </nav>
+
+
+    <section class="equipment-section">
+
+        <div class="section-heading">
+            <h1>Equipment Details 🚜</h1>
+            <p>Detailed information about the selected equipment.</p>
+        </div>
+
+
+        {% if equipment %}
+
+        <div class="equipment-card">
+
+            <div class="equipment-icon">
+                🚜
+            </div>
+
+            <h2>{{ equipment[1] }}</h2>
+
+            <p>
+                <strong>Category:</strong>
+                {{ equipment[2] }}
+            </p>
+
+            <p>
+                <strong>Description:</strong>
+                {{ equipment[3] }}
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                📍 {{ equipment[5] }}
+            </p>
+
+            <div class="equipment-price">
+                ₹{{ equipment[4] }} <span>/ hour</span>
+            </div>
+
+            <br>
+
+            <a href="/rent/{{ equipment[0] }}" class="rent-btn">
+                Rent Now 🚜
+            </a>
+
+        </div>
+
+        {% else %}
+
+        <div class="no-equipment">
+
+            <h2>Equipment Not Found</h2>
+
+            <p>
+                The selected equipment is not currently available.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </section>
+
+</body>
+</html>

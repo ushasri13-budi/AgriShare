@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rental Requests | AgriShare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Navigation Bar -->
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🌾 AgriShare
+        </div>
+
+        <div class="dashboard-links">
+            <a href="/owner_dashboard">Dashboard</a>
+            <a href="/dashboard">Equipment</a>
+            <a href="/owner_requests">Rental Requests</a>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Page Heading -->
+    <section class="dashboard-hero">
+
+        <div>
+            <h1>Rental Requests 📋</h1>
+
+            <p>
+                Review rental requests received from farmers.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Requests -->
+    <section class="equipment-section">
+
+        <div class="section-heading">
+            <h2>Requests for Your Equipment</h2>
+        </div>
+
+
+        <div class="equipment-grid">
+
+            {% for item in requests %}
+
+            <div class="equipment-card">
+
+                <div class="equipment-icon">
+                    🚜
+                </div>
+
+                <h3>{{ item[1] }}</h3>
+
+                <p>
+                    <strong>Farmer:</strong>
+                    {{ item[2] }}
+                </p>
+
+                <p>
+                    <strong>Booking Date:</strong>
+                    {{ item[3] }}
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    {{ item[4] }}
+                </p>
+
+
+                {% if item[4] == "Pending" %}
+
+                <div style="margin-top: 20px;">
+
+                    <a href="/accept_request/{{ item[0] }}"
+                       class="rent-btn">
+                        Accept ✅
+                    </a>
+
+                    <a href="/reject_request/{{ item[0] }}"
+                       class="rent-btn"
+                       style="margin-top: 10px;">
+                        Reject ❌
+                    </a>
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+            {% else %}
+
+            <div class="no-equipment">
+
+                <h3>No rental requests</h3>
+
+                <p>
+                    There are currently no requests for your equipment.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+
+        <h3>🌾 AgriShare</h3>
+
+        <p>
+            Connecting farmers with agricultural equipment.
+        </p>
+
+        <p class="copyright">
+            © 2026 AgriShare. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

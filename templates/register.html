@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | AgriShare</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="login-page">
+
+    <!-- Left Side -->
+    <div class="login-left">
+
+        <h1>🌾 AgriShare</h1>
+
+        <h2>Join AgriShare Today!</h2>
+
+        <p>
+            Create your account and start renting or sharing
+            agricultural equipment with ease.
+        </p>
+
+        <img src="{{ url_for('static', filename='images/farmer.png') }}" alt="Farmer">
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="login-right">
+
+        <form class="login-form" method="POST" action="/register">
+
+            <h2>Register</h2>
+
+           <input type="text" name="fullname" placeholder="Full Name" required>
+
+           <input type="email" name="email" placeholder="Email Address" required>
+
+           <input type="tel" name="phone" placeholder="Phone Number" required>
+
+           <label for="role">Register as:</label>
+
+          <select name="role" id="role" required>
+            <option value="">Select Role</option>
+            <option value="farmer">Farmer / Renter</option>
+            <option value="owner">Equipment Owner</option>
+          </select>
+
+           <input type="password" name="password" placeholder="Password" required>
+
+           <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+
+            <p>
+                Already have an account?
+                <a href="{{ url_for('login') }}">Login</a>
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

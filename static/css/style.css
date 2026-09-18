@@ -1,0 +1,1002 @@
+ /* Google Font */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#F8FFF7,#ECF8EC);
+    color:#333;
+}
+
+/* Navigation Bar */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#2E7D32;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin:0 20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#C8E6C9;
+}
+
+.buttons a{
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:8px;
+    margin-left:10px;
+    font-weight:500;
+}
+
+.login{
+    color:white;
+    border:2px solid white;
+}
+
+.register{
+    background:white;
+    color:#2E7D32;
+}
+
+.login:hover,
+.register:hover{
+    opacity:.85;
+}
+
+/* Hero Section */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 8%;
+    margin-top: 90px;
+}
+
+.hero-text{
+    width:50%;
+}
+
+.hero-text h1{
+    font-size:52px;
+    color:#2E7D32;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    font-size:18px;
+    margin-bottom:30px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    background:#2E7D32;
+    color:white;
+    text-decoration:none;
+    padding:14px 30px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#388E3C;
+}
+
+.hero-image{
+    width:45%;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.secondary-btn{
+    background:white;
+    color:#2E7D32;
+    border:2px solid #2E7D32;
+    margin-left:15px;
+}
+
+.secondary-btn:hover{
+    background:#2E7D32;
+    color:white;
+}
+
+.hero-image img{
+    transition:0.5s;
+}
+
+.hero-image img:hover{
+    transform:scale(1.05);
+}
+
+/* Equipment Categories */
+
+.categories{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.categories h2{
+    font-size:40px;
+    color:#2E7D32;
+    margin-bottom:50px;
+}
+
+.category-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.card{
+    background:white;
+    width:260px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card h3{
+    margin:20px 0 10px;
+    color:#2E7D32;
+}
+
+.card p{
+    font-size:15px;
+    margin-bottom:20px;
+}
+
+.card button{
+    background:#2E7D32;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.card button:hover{
+    background:#388E3C;
+}
+
+/* How It Works */
+
+.how-it-works{
+    padding:80px 8%;
+    text-align:center;
+    background:#ffffff;
+}
+
+.how-it-works h2{
+    font-size:40px;
+    color:#2E7D32;
+    margin-bottom:50px;
+}
+
+.steps{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.step{
+    width:250px;
+    padding:30px 20px;
+    border-radius:15px;
+    background:#F8FFF7;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.step:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.step h3{
+    color:#2E7D32;
+    margin-bottom:15px;
+}
+
+.step p{
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* Why Choose AgriShare */
+
+.why-us{
+    padding:80px 8%;
+    background:#F8FFF7;
+    text-align:center;
+}
+
+.why-us h2{
+    font-size:40px;
+    color:#2E7D32;
+    margin-bottom:50px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+.feature{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+
+.feature h3{
+    color:#2E7D32;
+    margin-bottom:15px;
+}
+
+.feature p{
+    line-height:1.7;
+}
+
+.feature:hover{
+    transform: translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.why-subtitle{
+    color:#666;
+    font-size:18px;
+    margin-top:-20px;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+/* Footer */
+
+.footer{
+    background:#2E7D32;
+    color:white;
+    padding:60px 8% 20px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.footer-box{
+    flex:1;
+    min-width:250px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    margin-bottom:20px;
+}
+
+.footer-box p{
+    line-height:1.8;
+    color:#f0f0f0;
+}
+
+.footer-box a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:12px;
+    transition:0.3s;
+}
+
+.footer-box a:hover{
+    color:#C8E6C9;
+    padding-left:8px;
+}
+
+.footer hr{
+    margin:40px 0 20px;
+    border:0;
+    border-top:1px solid rgba(255,255,255,0.3);
+}
+
+.copyright{
+    text-align:center;
+    font-size:15px;
+    color:#e0e0e0;
+}
+
+.footer-logo{
+    width:35px;
+    vertical-align:middle;
+    margin-right:10px;
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.login-page{
+    display:flex;
+    min-height:100vh;
+}
+
+.login-left{
+    width:50%;
+    background:#2E7D32;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:50px;
+    text-align:center;
+}
+
+.login-left h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.login-left h2{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.login-left p{
+    font-size:20px;
+    max-width:450px;
+    line-height:1.7;
+}
+
+.login-left img{
+    width:380px;
+    margin-top:35px;
+}
+
+.login-right{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5fff4;
+}
+
+.login-form{
+    width:450px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.login-form h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#2E7D32;
+}
+
+.login-form input:not([type="checkbox"]){
+    width:100%;
+    padding:15px;
+    margin-bottom:18px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+.login-form input{
+    width:100%;
+    padding:15px;
+}
+
+.login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    
+}
+
+.login-options input[type="checkbox"]{
+    width:16px;
+    height:16px;
+    margin:0;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:16px;
+}
+
+.remember input{
+    width:16px;
+    height:16px;
+    margin:0;
+    cursor:pointer;
+}
+
+.remember input[type="checkbox"]{
+    width:16px;
+    height:16px;
+    margin:0;
+    cursor:pointer;
+}
+
+.login-options a{
+    color:#2E7D32;
+    text-decoration:none;
+    font-size:15px;
+}
+
+.login-options a:hover{
+    text-decoration:underline;
+}
+
+.login-form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#2E7D32;
+    color:white;
+    font-size:18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+.login-form button:hover{
+    background:#1B5E20;
+    transform:translateY(-2px);
+    transition:0.3s;
+}
+
+.login-form p{
+    text-align:center;
+    margin-top:20px;
+}
+
+.login-form p a{
+    color:#2E7D32;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.login-left img{
+    width:380px;
+    margin-top:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.login-form button:hover{
+    background:#1B5E20;
+    transform:translateY(-2px);
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard-body {
+    background: #f5fff4;
+    color: #333;
+    padding-top: 80px;
+}
+
+
+/* Dashboard Navigation */
+
+.dashboard-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    background: #2E7D32;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 8%;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+
+.dashboard-logo {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.dashboard-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.dashboard-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+
+.dashboard-links a:hover {
+    color: #C8E6C9;
+}
+
+
+.dashboard-links .logout-btn {
+    background: white;
+    color: #2E7D32;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+
+.dashboard-links .logout-btn:hover {
+    background: #C8E6C9;
+}
+
+
+/* Welcome Section */
+
+.dashboard-hero {
+    background: linear-gradient(
+        135deg,
+        #2E7D32,
+        #43A047
+    );
+
+    color: white;
+
+    padding: 70px 8%;
+
+    text-align: center;
+}
+
+
+.dashboard-hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+
+.dashboard-hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* Equipment Section */
+
+.equipment-section {
+    padding: 70px 8%;
+}
+
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+
+.section-heading h2 {
+    color: #2E7D32;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+.section-heading p {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* Equipment Grid */
+
+.equipment-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+
+/* Equipment Card */
+
+.equipment-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+
+    border: 1px solid #e5eee5;
+}
+
+
+.equipment-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.15);
+}
+
+
+.equipment-icon {
+    font-size: 55px;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+
+.equipment-card h3 {
+    color: #2E7D32;
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+
+.equipment-card p {
+    color: #555;
+
+    line-height: 1.6;
+
+    margin-bottom: 10px;
+}
+
+
+.equipment-price {
+    color: #1B5E20;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin: 20px 0;
+}
+
+
+.equipment-price span {
+    font-size: 14px;
+
+    color: #777;
+
+    font-weight: normal;
+}
+
+
+/* Rent Button */
+
+.rent-btn {
+    display: block;
+
+    text-align: center;
+
+    background: #2E7D32;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.rent-btn:hover {
+    background: #1B5E20;
+
+    transform: translateY(-2px);
+}
+
+
+/* No Equipment */
+
+.no-equipment {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+
+.no-equipment h3 {
+    color: #2E7D32;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.no-equipment p {
+    margin-bottom: 25px;
+}
+
+
+/* Quick Actions */
+
+.quick-actions {
+    background: white;
+
+    padding: 70px 8%;
+
+    text-align: center;
+}
+
+
+.quick-actions h2 {
+    color: #2E7D32;
+
+    font-size: 35px;
+
+    margin-bottom: 40px;
+}
+
+
+.action-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+}
+
+
+.action-card {
+    background: #F8FFF7;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+
+    transition: 0.3s;
+}
+
+
+.action-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+
+.action-card span {
+    font-size: 40px;
+}
+
+
+.action-card h3 {
+    color: #2E7D32;
+
+    margin: 15px 0 10px;
+}
+
+
+.action-card p {
+    color: #666;
+
+    line-height: 1.5;
+}
+
+
+/* Dashboard Footer */
+
+.dashboard-footer {
+    background: #2E7D32;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 8%;
+}
+
+
+.dashboard-footer h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.dashboard-footer p {
+    margin-bottom: 15px;
+}
+
+
+.dashboard-footer .copyright {
+    font-size: 14px;
+
+    color: #d8ead8;
+
+    margin-top: 25px;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    .dashboard-navbar {
+        height: auto;
+
+        padding: 15px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .dashboard-links {
+        gap: 12px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .dashboard-links a {
+        font-size: 14px;
+    }
+
+
+    .dashboard-body {
+        padding-top: 125px;
+    }
+
+
+    .dashboard-hero h1 {
+        font-size: 32px;
+    }
+
+
+    .dashboard-hero p {
+        font-size: 16px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 28px;
+    }
+
+}
+
+.login-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+    color: #333;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.login-form select:focus {
+    outline: none;
+    border-color: #2E7D32;
+}
+
+.info-section {
+    padding: 80px 20px;
+    margin-top: 20px;
+    min-height: 250px;
+    scroll-margin-top: 100px;
+}
+
+#about {
+    display: block;
+}
+
+#contact {
+    display: block;
+}

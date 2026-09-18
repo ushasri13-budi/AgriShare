@@ -1,0 +1,238 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriShare</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+           <div class="logo">🌾 AgriShare</div>
+
+        <ul class="nav-links">
+           <li><a href="/">Home</a></li>
+           <li><a href="/dashboard">Equipment</a></li>
+           <li><a href="#about">About</a></li>
+           <li><a href="#contact">Contact</a></li>
+        </ul>
+            <div class="buttons">
+                <a href="{{ url_for('login') }}" class="login">Login</a>
+                <a href="{{ url_for('register') }}" class="register">Register</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h1>Rent Agricultural Equipment Easily</h1>
+
+            <p>
+                Connecting Farmers with Equipment Owners
+                for affordable and efficient farming.
+            </p>
+
+            <a href="/dashboard" class="btn">Search Equipment</a>
+            <a href="#how-it-works" class="btn">Learn More</a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="{{ url_for('static', filename='images/farmer.png') }}" alt="Farmer">
+
+        </div>
+
+    </section>
+
+    <!-- Equipment Categories -->
+
+<section class="categories">
+
+    <h2>Equipment Categories</h2>
+
+    <div class="category-container">
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/tractor.png') }}">
+            <h3>Tractor</h3>
+            <p>Powerful tractors for ploughing and transport.</p>
+            <a href="/equipment/Tractor" class="btn">
+                View Details
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/harvester.png') }}">
+            <h3>Harvester</h3>
+            <p>Efficient harvesting equipment for all crops.</p>
+           <a href="/equipment/Harvestor" class="btn">
+                View Details
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/sprayer.png') }}">
+            <h3>Sprayer</h3>
+            <p>Crop spraying equipment for healthy farming.</p>
+            <a href="/equipment/Sprayer" class="btn">
+    View Details
+</a>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/rotavator.png') }}">
+            <h3>Rotavator</h3>
+            <p>Prepare soil quickly with modern rotavators.</p>
+            <a href="/equipment/Rotavator" class="btn">
+    View Details
+</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- How It Works -->
+
+<section class="how-it-works" id="how-it-works">
+
+    <h2>How It Works</h2>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="icon">👤</div>
+            <h3>Register</h3>
+            <p>Create your account as a Farmer or Equipment Owner.</p>
+        </div>
+
+        <div class="step">
+            <div class="icon">🔍</div>
+            <h3>Search Equipment</h3>
+            <p>Browse available agricultural equipment near your location.</p>
+        </div>
+
+        <div class="step">
+            <div class="icon">📅</div>
+            <h3>Book & Rent</h3>
+            <p>Choose your dates and send a rental request.</p>
+        </div>
+
+        <div class="step">
+            <div class="icon">🚜</div>
+            <h3>Start Farming</h3>
+            <p>Receive the equipment and begin your farming work.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="info-section" id="about">
+    <h2>About AgriShare</h2>
+    <p>
+        AgriShare is a Farmers Equipment Rental Portal that connects
+        farmers with equipment owners. Farmers can find and rent
+        agricultural equipment, while owners can list their equipment
+        for rental.
+    </p>
+</section>
+
+<section class="info-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: agrishare@example.com</p>
+    <p>Phone: +91 XXXXX XXXXX</p>
+    <p>We are happy to help farmers and equipment owners.</p>
+</section>
+
+<!-- Why Choose AgriShare -->
+
+<section class="why-us">
+
+    <h2>Why Choose AgriShare?</h2>
+
+    <p class="why-subtitle">
+Making agricultural equipment rental simple, affordable, and accessible for every farmer.
+</p>
+
+    <div class="features">
+
+        <div class="feature">
+            <h3>💰 Affordable Rentals</h3>
+            <p>Rent equipment at reasonable prices without purchasing expensive machinery.</p>
+        </div>
+
+        <div class="feature">
+            <h3>📍 Nearby Equipment</h3>
+            <p>Find agricultural equipment available near your location quickly.</p>
+        </div>
+
+        <div class="feature">
+            <h3>✅ Trusted Platform</h3>
+            <p>Verified farmers and equipment owners ensure safe and reliable rentals.</p>
+        </div>
+
+        <div class="feature">
+            <h3>⏰ Save Time</h3>
+            <p>Book equipment online within minutes and reduce unnecessary travel.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+           <h2>🌾 AgriShare</h2>
+            <p>
+                Making agricultural equipment rental simple, affordable,
+                and accessible for every farmer.
+            </p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Equipment</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📞 +91 98765 43210</p>
+            <p>📧 agrishare@gmail.com</p>
+            <p>📍 Vijayawada, Andhra Pradesh</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 AgriShare. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>

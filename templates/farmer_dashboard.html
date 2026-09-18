@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farmer Dashboard | AgriShare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">🌾 AgriShare</div>
+
+    <div class="buttons">
+        <a href="/" class="login">Home</a>
+        <a href="/logout" class="register">Logout</a>
+    </div>
+
+</nav>
+
+
+<section class="categories">
+
+    <h2>👨‍🌾 Farmer Dashboard</h2>
+
+    <p>
+        Welcome! Find and rent agricultural equipment easily.
+    </p>
+
+    <br>
+
+    <div class="category-container">
+
+        <div class="card">
+
+            <div class="icon">🚜</div>
+
+            <h3>Rent Equipment</h3>
+
+            <p>
+                Browse available agricultural equipment
+                and rent the equipment you need.
+            </p>
+
+            <a href="/dashboard" class="btn">
+                Rent Equipment
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">📋</div>
+
+            <h3>My Bookings</h3>
+
+            <p>
+                View your equipment rental bookings
+                and booking details.
+            </p>
+
+            <a href="/bookings" class="btn">
+                My Bookings
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

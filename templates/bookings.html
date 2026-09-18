@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Bookings | AgriShare</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <h1>My Bookings 📋</h1>
+
+    {% for booking in bookings %}
+
+    <div>
+
+        <h2>Equipment: {{ booking[0] }} 🚜</h2>
+
+        <p>Booked By: {{ booking[1] }}</p>
+
+        <p>Booking Date: {{ booking[2] }}</p>
+
+        <p>
+            Status:
+            {% if booking[3] == "Pending" %}
+                ⏳ Pending
+            {% elif booking[3] == "Accepted" %}
+                ✅ Accepted
+            {% elif booking[3] == "Rejected" %}
+                ❌ Rejected
+            {% else %}
+                {{ booking[3] }}
+            {% endif %}
+        </p>
+
+        <hr>
+
+    </div>
+
+    {% else %}
+
+    <p>No bookings found.</p>
+
+    {% endfor %}
+
+</body>
+
+</html>

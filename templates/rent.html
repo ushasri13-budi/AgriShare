@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Rent Equipment | AgriShare</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+
+<h1>Rent Equipment 🚜</h1>
+
+<h2>{{ equipment[1] }}</h2>
+
+<p>Category: {{ equipment[2] }}</p>
+
+<p>Description: {{ equipment[3] }}</p>
+
+<p>Price per Hour: ₹{{ equipment[4] }}</p>
+
+<p>Location: {{ equipment[5] }}</p>
+
+<br>
+
+<form method="POST" onsubmit="return confirmBooking()">
+
+    <input type="text" name="farmer_name" placeholder="Your Name" required>
+    <br><br>
+
+    <input type="date" name="booking_date" required>
+    <br><br>
+
+    <button type="submit">Send Rental Request</button>
+
+</form>
+
+</body>
+</html>
