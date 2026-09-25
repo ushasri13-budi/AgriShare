@@ -4,9 +4,15 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = "agrishare_secret_key"
 
+def get_db_connection():
+    conn = sqlite3.connect("agrishare.db", timeout=30)
+    conn.execute("PRAGMA busy_timeout = 30000")
+    return conn
+
 
 def create_tables():
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
+    conn.execute("PRAGMA journal_mode=WAL")
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -56,7 +62,7 @@ def login():
         email = request.form["email"]
         password = request.form["password"]
 
-        conn = sqlite3.connect("agrishare.db")
+        conn = get_db_connection()
         cursor = conn.cursor()
 
         cursor.execute(
@@ -109,7 +115,7 @@ def register():
         if password != confirm_password:
             return "Passwords do not match!"
 
-        conn = sqlite3.connect("agrishare.db")
+        conn = get_db_connection()
         cursor = conn.cursor()
 
         cursor.execute("""
@@ -143,7 +149,7 @@ def add_equipment():
 
         owner_email = session["email"]
 
-        conn = sqlite3.connect("agrishare.db")
+        conn = get_db_connection()
         cursor = conn.cursor()
 
         cursor.execute("""
@@ -179,7 +185,7 @@ def add_equipment():
 @app.route("/dashboard")
 def dashboard():
 
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM equipment")
@@ -201,7 +207,7 @@ def rent(id):
     if "email" not in session or session.get("role") != "farmer":
         return redirect("/login")
 
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute(
@@ -259,7 +265,7 @@ def bookings():
     if "email" not in session:
         return redirect("/login")
 
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     # Farmer sees only their own requests
@@ -310,7 +316,7 @@ def owner_requests():
     if "email" not in session or session.get("role") != "owner":
         return redirect("/login")
 
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -344,7 +350,7 @@ def accept_request(booking_id):
     if "email" not in session or session.get("role") != "owner":
         return redirect("/login")
 
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -373,7 +379,7 @@ def reject_request(booking_id):
     if "email" not in session or session.get("role") != "owner":
         return redirect("/login")
 
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -433,7 +439,7 @@ def owner_dashboard():
 @app.route("/equipment/<name>")
 def equipment_details(name):
 
-    conn = sqlite3.connect("agrishare.db")
+    conn = get_db_connection()
     cursor = conn.cursor()
 
     cursor.execute(
